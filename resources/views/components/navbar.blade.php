@@ -38,95 +38,13 @@
                 </li>
 
                 <li class="nxl-item nxl-hasmenu">
-                    <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-power"></i></span>
-                        <span class="nxl-mtext">Authentication</span><span class="nxl-arrow"><i
-                                class="feather-chevron-right"></i></span>
-                    </a>
-                    <ul class="nxl-submenu">
-                        <li class="nxl-item nxl-hasmenu">
-                            <a href="javascript:void(0);" class="nxl-link">
-                                <span class="nxl-mtext">Login</span><span class="nxl-arrow"><i
-                                        class="feather-chevron-right"></i></span>
-                            </a>
-                            <ul class="nxl-submenu">
-                                <li class="nxl-item"><a class="nxl-link" href="auth-login-cover.html">Cover</a>
-                                </li>
-                                <li class="nxl-item"><a class="nxl-link" href="auth-login-minimal.html">Minimal</a></li>
-                                <li class="nxl-item"><a class="nxl-link" href="auth-login-creative.html">Creative</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nxl-item nxl-hasmenu">
-                            <a href="javascript:void(0);" class="nxl-link">
-                                <span class="nxl-mtext">Register</span><span class="nxl-arrow"><i
-                                        class="feather-chevron-right"></i></span>
-                            </a>
-                            <ul class="nxl-submenu">
-                                <li class="nxl-item"><a class="nxl-link" href="auth-register-cover.html">Cover</a></li>
-                                <li class="nxl-item"><a class="nxl-link" href="auth-register-minimal.html">Minimal</a>
-                                </li>
-                                <li class="nxl-item"><a class="nxl-link" href="auth-register-creative.html">Creative</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nxl-item nxl-hasmenu">
-                            <a href="javascript:void(0);" class="nxl-link">
-                                <span class="nxl-mtext">Error-404</span><span class="nxl-arrow"><i
-                                        class="feather-chevron-right"></i></span>
-                            </a>
-                            <ul class="nxl-submenu">
-                                <li class="nxl-item"><a class="nxl-link" href="auth-404-cover.html">Cover</a>
-                                </li>
-                                <li class="nxl-item"><a class="nxl-link" href="auth-404-minimal.html">Minimal</a>
-                                </li>
-                                <li class="nxl-item"><a class="nxl-link" href="auth-404-creative.html">Creative</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nxl-item nxl-hasmenu">
-                            <a href="javascript:void(0);" class="nxl-link">
-                                <span class="nxl-mtext">Reset Pass</span><span class="nxl-arrow"><i
-                                        class="feather-chevron-right"></i></span>
-                            </a>
-                            <ul class="nxl-submenu">
-                                <li class="nxl-item"><a class="nxl-link" href="auth-reset-cover.html">Cover</a>
-                                </li>
-                                <li class="nxl-item"><a class="nxl-link" href="auth-reset-minimal.html">Minimal</a>
-                                </li>
-                                <li class="nxl-item"><a class="nxl-link" href="auth-reset-creative.html">Creative</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nxl-item nxl-hasmenu">
-                            <a href="javascript:void(0);" class="nxl-link">
-                                <span class="nxl-mtext">Verify OTP</span><span class="nxl-arrow"><i
-                                        class="feather-chevron-right"></i></span>
-                            </a>
-                            <ul class="nxl-submenu">
-                                <li class="nxl-item"><a class="nxl-link" href="auth-verify-cover.html">Cover</a>
-                                </li>
-                                <li class="nxl-item"><a class="nxl-link" href="auth-verify-minimal.html">Minimal</a>
-                                </li>
-                                <li class="nxl-item"><a class="nxl-link"
-                                        href="auth-verify-creative.html">Creative</a></li>
-                            </ul>
-                        </li>
-                        <li class="nxl-item nxl-hasmenu">
-                            <a href="javascript:void(0);" class="nxl-link">
-                                <span class="nxl-mtext">Maintenance</span><span class="nxl-arrow"><i
-                                        class="feather-chevron-right"></i></span>
-                            </a>
-                            <ul class="nxl-submenu">
-                                <li class="nxl-item"><a class="nxl-link" href="auth-maintenance-cover.html">Cover</a>
-                                </li>
-                                <li class="nxl-item"><a class="nxl-link"
-                                        href="auth-maintenance-minimal.html">Minimal</a></li>
-                                <li class="nxl-item"><a class="nxl-link"
-                                        href="auth-maintenance-creative.html">Creative</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <form action="/logout" method="POST" class="nxl-link">
+                        @csrf
+                        <button type="submit" class="btn btn-danger ">
+                            <span>Logout</span>
+                        </button>
+                    </form>
+
                 </li>
             </ul>
 
