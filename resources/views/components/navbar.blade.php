@@ -3,8 +3,8 @@
         <div class="m-header">
             <a href="index.html" class="b-brand">
                 <!-- ========   change your logo hear   ============ -->
-                <img src="assets/images/logo-full.png" alt="" class="logo logo-lg">
-                <img src="assets/images/logo-abbr.png" alt="" class="logo logo-sm">
+                <img src="{{ asset('assets/images/logo-full.png') }}" alt="" class="logo logo-lg">
+                <img src="{{ asset('assets/images/logo-abbr.png ') }}" alt="" class="logo logo-sm">
             </a>
         </div>
         <div class="navbar-content">
@@ -27,13 +27,12 @@
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-users"></i></span>
-                        <span class="nxl-mtext">Customers</span><span class="nxl-arrow"><i
+                        <span class="nxl-mtext">Data Jamaah</span><span class="nxl-arrow"><i
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="/customers">Customers</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/customers_create">Customers
-                                Create</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/customers">Jamaah</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/customers/create">Tambah Jamaah</a></li>
                     </ul>
                 </li>
 
@@ -44,7 +43,6 @@
                             <span>Logout</span>
                         </button>
                     </form>
-
                 </li>
             </ul>
 
