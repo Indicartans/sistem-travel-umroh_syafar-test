@@ -49,28 +49,7 @@
                                 role="tablist">
                                 <li class="nav-item flex-fill border-top" role="presentation">
                                     <a href="javascript:void(0);" class="nav-link active" data-bs-toggle="tab"
-                                        data-bs-target="#profileTab" role="tab">Profile</a>
-                                </li>
-                                <li class="nav-item flex-fill border-top" role="presentation">
-                                    <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#passwordTab" role="tab">Password</a>
-                                </li>
-                                <li class="nav-item flex-fill border-top" role="presentation">
-                                    <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#billingTab" role="tab">Billing & Shipping</a>
-                                </li>
-                                <li class="nav-item flex-fill border-top" role="presentation">
-                                    <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#subscriptionTab" role="tab">Subscription</a>
-                                </li>
-                                <li class="nav-item flex-fill border-top" role="presentation">
-                                    <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#notificationsTab" role="tab">Notifications</a>
-                                </li>
-                                <li class="nav-item flex-fill border-top" role="presentation">
-                                    <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#connectionTab" role="tab">Connection</a>
-                                </li>
+                                        data-bs-target="#profileTab" role="tab">Tambah Jamaah</a>
                             </ul>
                         </div>
 
@@ -105,7 +84,7 @@
                                             </div>
                                             <div class="col-lg-8">
                                                 <div class="input-group">
-                                                    <div class="input-group-text"><i class="feather-mail"></i></div>
+                                                    <div class="input-group-text"><i class="bi bi-123"></i></div>
                                                     <input type="number" class="form-control" id="mailInput"
                                                         placeholder="NIK">
                                                 </div>
@@ -118,7 +97,7 @@
                                             </div>
                                             <div class="col-lg-8">
                                                 <div class="input-group">
-                                                    <div class="input-group-text"><i class="feather-phone"></i></div>
+                                                    <div class="input-group-text"><i class="bi bi-geo"></i></div>
                                                     <input type="text" class="form-control" id="phoneInput"
                                                         placeholder="Tempat Lahir">
                                                 </div>
@@ -130,128 +109,230 @@
                                             </div>
                                             <div class="col-lg-8">
                                                 <div class="row">
-                                                    <div class="col-lg-6 mb-3">
+                                                    <div class="col-lg-8 mb-2">
                                                         <div class="input-group">
                                                             <div class="input-group-text"><span>Provinsi</span>
                                                             </div>
-                                                            {{-- <input type="text" class="form-control" id="companyInput"
-                                                                placeholder="Provinsi"> --}}
                                                             <select name="provinsi" id="provinsi"
-                                                                class="btn btn-secondary dropdown-toggle">
-                                                                <option value="" class="dropdown-item">JAWA
+                                                                class="btn btn-secondary dropdown-toggle text-white">
+                                                                <option value="" class="dropdown-item">
+                                                                    Pilih
+                                                                    Provinsi
                                                                 </option>
+                                                                @foreach ($provinsi as $item)
+                                                                    <option value="{{ $item['id'] }}">
+                                                                        {{ $item['name'] }}</option>
+                                                                @endforeach
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6">
+                                                    <div class="col-lg-8 mb-2">
                                                         <div class="input-group">
                                                             <div class="input-group-text"><span>Kota/Kab</span>
                                                             </div>
-                                                            {{-- <input type="text" class="form-control" id="companyInput"
-                                                                placeholder="Provinsi"> --}}
                                                             <select name="kota" id="kota"
                                                                 class="btn btn-secondary dropdown-toggle">
-                                                                <option value="" class="dropdown-item">JAWA
+                                                                <option value="" class="dropdown-item">Pilih
+                                                                    Kota/Kab
                                                                 </option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6">
+                                                    <div class="col-lg-8 mb-2">
                                                         <div class="input-group">
                                                             <div class="input-group-text"><span>Kecamatan</span>
                                                             </div>
-                                                            {{-- <input type="text" class="form-control" id="companyInput"
-                                                                placeholder="Provinsi"> --}}
-                                                            <select name="kecamatan" id="provinsi"
+                                                            <select name="kecamatan" id="kecamatan"
                                                                 class="btn btn-secondary dropdown-toggle">
-                                                                <option value="" class="dropdown-item">JAWA
+                                                                <option value="" class="dropdown-item">Pilih
+                                                                    Kecamatan
                                                                 </option>
                                                             </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text"><span>Kel/Desa</span>
+                                                            </div>
+                                                            <select name="kelurahan" id="kelurahan"
+                                                                class="btn btn-secondary dropdown-toggle">
+                                                                <option value="" class="dropdown-item">Pilih
+                                                                    Kelurahan/Desa
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label class="fw-semibold">Jenis Kelamin</label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input"
+                                                            id="pria">
+                                                        <label for="pria" class="form-check-label">Pria</label>
+                                                    </div>
+                                                    <div class="form-check mx-2">
+                                                        <input type="radio" class="form-check-input"
+                                                            id="wanita">
+                                                        <label for="wanita" class="form-check-label">Wanita</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label class="fw-semibold">No Paspor</label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text"><i
+                                                                    class="bi bi-credit-card"></i>
+                                                            </div>
+                                                            <input type="text" class="form-control"
+                                                                id="websiteInput" placeholder="No Paspor">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="input-group">
-                                                            <div class="input-group-text"><span>Kel/Desa</span>
-                                                            </div>
-                                                            {{-- <input type="text" class="form-control" id="companyInput"
-                                                                placeholder="Provinsi"> --}}
-                                                            <select name="kelurahan" id="kelurahan"
-                                                                class="btn btn-secondary dropdown-toggle">
-                                                                <option value="" class="dropdown-item">JAWA
-                                                                </option>
-                                                            </select>
+                                                            <label for="masaBerlaku" class="fw-semibold m-2">Masa
+                                                                Berlaku</label>
+                                                            <input type="date" id="masaBerlaku"
+                                                                class="form-control" id="websiteInput"
+                                                                placeholder="No Paspor">
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label for="ktp" class="fw-semibold">Lampiran KTP</label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i
+                                                            class="bi bi-person-vcard"></i></i>
+                                                    </div>
+                                                    <input type="file" class="form-control" id="ktp">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label for="kk" class="fw-semibold">Lampiran KK</label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="bi bi-card-text"></i></i>
+                                                    </div>
+                                                    <input type="file" class="form-control" id="kk">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label for="pas-foto" class="fw-semibold">Pas Foto</label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="bi bi-person"></i></div>
+                                                    <input type="file" class="form-control" id="pas-foto">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label class="fw-semibold" id="no-visa">No Visa</label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text"><i
+                                                                    class="bi bi-credit-card-2-back"></i></i>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="no-visa"
+                                                                placeholder="No Visa">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="input-group">
+                                                            <label for="masa-berlaku" class="fw-semibold m-2">Masa
+                                                                Berlaku</label>
+                                                            <input type="date" id="masa-berlaku"
+                                                                class="form-control" id="masa-berlaku">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label for="jenis-paket" class="fw-semibold">Jenis Paket</label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="bi bi-activity"></i></i>
+                                                    </div>
+                                                    <select name="jenis_paket" id="jenis_paket"
+                                                        class="btn btn-secondary dropdown-toggle">
+                                                        <option value="" selected disabled>Pilih Paket</option>
+                                                        <option value="Paket Itikaf" class="dropdown-item">Paket
+                                                            Itikaf
+                                                        </option>
+                                                        <option value="Paket Reguler" class="dropdown-item">Paket
+                                                            Reguler
+                                                        </option>
+                                                        <option value="Paket VIP" class="dropdown-item">Paket VIP
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label for="aboutInput" class="fw-semibold">Jenis Kamar</label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i
+                                                            class="bi bi-distribute-vertical"></i>
+                                                    </div>
+                                                    <select name="jenis_paket" id="jenis_paket"
+                                                        class="btn btn-secondary dropdown-toggle">
+                                                        <option value="" selected disabled>Pilih Kamar</option>
+                                                        <option value="Kamar Quint" class="dropdown-item">Kamar Quint
+                                                        </option>
+                                                        <option value="Kamar Quad" class="dropdown-item">Kamar Quad
+                                                        </option>
+                                                        <option value="Kamar Triple" class="dropdown-item">Kamar
+                                                            Triple
+                                                        </option>
+                                                        <option value="Kamar Double" class="dropdown-item">Kamar
+                                                            Double
+                                                        </option>
+                                                        <option value="Kamar Single" class="dropdown-item">Kamar
+                                                            Single
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-primary ">Tambah
+                                                Jamaah</button>
+                                        </div>
 
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-4">
-                                                <label for="designationInput" class="fw-semibold">Designation:
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="input-group">
-                                                    <div class="input-group-text"><i class="feather-briefcase"></i>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="designationInput"
-                                                        placeholder="Designation">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-4">
-                                                <label for="websiteInput" class="fw-semibold">Website: </label>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="input-group">
-                                                    <div class="input-group-text"><i class="feather-link"></i></div>
-                                                    <input type="text" class="form-control" id="websiteInput"
-                                                        placeholder="Website">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-4">
-                                                <label for="VATInput" class="fw-semibold">VAT: </label>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="input-group">
-                                                    <div class="input-group-text"><i class="feather-dollar-sign"></i>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="VATInput"
-                                                        placeholder="VAT">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-4">
-                                                <label for="addressInput_2" class="fw-semibold">Address: </label>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="input-group">
-                                                    <div class="input-group-text"><i class="feather-map-pin"></i>
-                                                    </div>
-                                                    <textarea class="form-control" id="addressInput_2" cols="30" rows="3" placeholder="Address"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-4">
-                                                <label for="aboutInput" class="fw-semibold">About: </label>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="input-group">
-                                                    <div class="input-group-text"><i class="feather-type"></i></div>
-                                                    <textarea class="form-control" id="aboutInput" cols="30" rows="5" placeholder="About"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
-
                                 </div>
-
                             </div>
                         </form>
 
@@ -262,3 +343,73 @@
         <!-- [ Main Content ] end -->
     </div>
 </x-layout>
+
+<script>
+    $(document).ready(function() {
+        // load kota/kab
+        $('#provinsi').on('change', function() {
+            var provinsiId = $(this).val();
+            if (provinsiId) {
+                $.ajax({
+                    url: '/kota/' + provinsiId,
+                    method: 'GET',
+                    success: function(data) {
+                        $('#kota').empty();
+                        $('#kota').append(
+                            '<option value="">Pilih Kota/Kab</option>')
+                        $.each(data, function(key, value) {
+                            $('#kota').append('<option value="' + value.id +
+                                '">' + value.name + '</option>');
+                        })
+                    }
+                })
+            } else {
+                $('#kota').empty();
+            }
+        })
+
+        // load kecamatan
+        $('#kota').on('change', function() {
+            var kotaiId = $(this).val();
+            if (kotaiId) {
+                $.ajax({
+                    url: '/kecamatan/' + kotaiId,
+                    method: 'GET',
+                    success: function(data) {
+                        $('#kecamatan').empty();
+                        $('#kecamatan').append(
+                            '<option value="">Pilih Kecamatan</option>')
+                        $.each(data, function(key, value) {
+                            $('#kecamatan').append('<option value="' + value.id +
+                                '">' + value.name + '</option>');
+                        })
+                    }
+                })
+            } else {
+                $('#kota').empty();
+            }
+        })
+
+        // load kelurahan
+        $('#kecamatan').on('change', function() {
+            var kecamatanId = $(this).val();
+            if (kecamatanId) {
+                $.ajax({
+                    url: '/kelurahan/' + kecamatanId,
+                    method: 'GET',
+                    success: function(data) {
+                        $('#kelurahan').empty();
+                        $('#kelurahan').append(
+                            '<option value="">Pilih Kelurahan</option>')
+                        $.each(data, function(key, value) {
+                            $('#kelurahan').append('<option value="' + value.id +
+                                '">' + value.name + '</option>');
+                        })
+                    }
+                })
+            } else {
+                $('#kelurahan').empty();
+            }
+        })
+    })
+</script>

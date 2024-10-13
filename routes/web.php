@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\WilayahController;
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', function () {
@@ -12,6 +13,12 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::resource('/customers', CustomerController::class);
+
+    // wilayah indonesia
+    Route::get('/provinsi', [WilayahController::class, 'getProvinsi']);
+    Route::get('/kota/{provinsi_id}', [WilayahController::class, 'getKota']);
+    Route::get('/kecamatan/{kota_id}', [WilayahController::class, 'getKecamatan']);
+    Route::get('/kelurahan/{kecamatan_id}', [WilayahController::class, 'getKelurahan']);
 });
 
 

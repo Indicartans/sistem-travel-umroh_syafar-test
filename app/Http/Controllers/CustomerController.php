@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cutomer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class CustomerController extends Controller
 {
@@ -20,7 +21,10 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('customer.customer_create');
+        $provinsi = Http::get('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json');
+        $provinsi = json_decode($provinsi->body(), true);
+        // dd($provinsi);
+        return view('customer.customer_create', compact('provinsi'));
     }
 
     /**
