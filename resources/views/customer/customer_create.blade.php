@@ -53,7 +53,7 @@
                             </ul>
                         </div>
 
-                        <form action="/customer" method="POST">
+                        <form action="/customers" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="profileTab" role="tabpanel">
@@ -73,8 +73,8 @@
                                             <div class="col-lg-8">
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-user"></i></div>
-                                                    <input type="text" class="form-control" id="fullnameInput"
-                                                        placeholder="Nama">
+                                                    <input type="text" name="nama" class="form-control"
+                                                        id="fullnameInput" placeholder="Nama">
                                                 </div>
                                             </div>
                                         </div>
@@ -85,8 +85,8 @@
                                             <div class="col-lg-8">
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bi bi-123"></i></div>
-                                                    <input type="number" class="form-control" id="mailInput"
-                                                        placeholder="NIK">
+                                                    <input type="number" name="nik" class="form-control"
+                                                        id="mailInput" placeholder="NIK">
                                                 </div>
                                             </div>
                                         </div>
@@ -98,8 +98,8 @@
                                             <div class="col-lg-8">
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bi bi-geo"></i></div>
-                                                    <input type="text" class="form-control" id="phoneInput"
-                                                        placeholder="Tempat Lahir">
+                                                    <input type="text" name="tempat_lahir" class="form-control"
+                                                        id="phoneInput" placeholder="Tempat Lahir">
                                                 </div>
                                             </div>
                                         </div>
@@ -173,13 +173,13 @@
                                             <div class="col-lg-8">
                                                 <div class="input-group">
                                                     <div class="form-check">
-                                                        <input type="radio" class="form-check-input"
-                                                            id="pria">
+                                                        <input type="radio" name="jenis_kelamin" value="Pria"
+                                                            class="form-check-input" id="pria">
                                                         <label for="pria" class="form-check-label">Pria</label>
                                                     </div>
                                                     <div class="form-check mx-2">
-                                                        <input type="radio" class="form-check-input"
-                                                            id="wanita">
+                                                        <input type="radio" name="jenis_kelamin" value="Wanita"
+                                                            class="form-check-input" id="wanita">
                                                         <label for="wanita" class="form-check-label">Wanita</label>
                                                     </div>
                                                 </div>
@@ -196,17 +196,17 @@
                                                             <div class="input-group-text"><i
                                                                     class="bi bi-credit-card"></i>
                                                             </div>
-                                                            <input type="text" class="form-control"
-                                                                id="websiteInput" placeholder="No Paspor">
+                                                            <input type="text" name="no_paspor"
+                                                                class="form-control" id="websiteInput"
+                                                                placeholder="No Paspor">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="input-group">
                                                             <label for="masaBerlaku" class="fw-semibold m-2">Masa
                                                                 Berlaku</label>
-                                                            <input type="date" id="masaBerlaku"
-                                                                class="form-control" id="websiteInput"
-                                                                placeholder="No Paspor">
+                                                            <input type="date" name="masa_berlaku_paspor"
+                                                                id="masaBerlaku" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -221,7 +221,8 @@
                                                     <div class="input-group-text"><i
                                                             class="bi bi-person-vcard"></i></i>
                                                     </div>
-                                                    <input type="file" class="form-control" id="ktp">
+                                                    <input type="file" name="lampiran_ktp" class="form-control"
+                                                        id="ktp">
                                                 </div>
                                             </div>
                                         </div>
@@ -233,7 +234,8 @@
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bi bi-card-text"></i></i>
                                                     </div>
-                                                    <input type="file" class="form-control" id="kk">
+                                                    <input type="file" name="lampiran_kk" class="form-control"
+                                                        id="kk">
                                                 </div>
                                             </div>
                                         </div>
@@ -244,7 +246,21 @@
                                             <div class="col-lg-8">
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bi bi-person"></i></div>
-                                                    <input type="file" class="form-control" id="pas-foto">
+                                                    <input type="file" name="pas_foto" class="form-control"
+                                                        id="pas-foto">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label for="pas-foto" class="fw-semibold">Lampiran Paspor</label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="bi bi-person"></i></div>
+                                                    <input type="file" name="paspor" class="form-control"
+                                                        id="paspor">
                                                 </div>
                                             </div>
                                         </div>
@@ -259,16 +275,16 @@
                                                             <div class="input-group-text"><i
                                                                     class="bi bi-credit-card-2-back"></i></i>
                                                             </div>
-                                                            <input type="text" class="form-control" id="no-visa"
-                                                                placeholder="No Visa">
+                                                            <input type="text" name="no_visa" class="form-control"
+                                                                id="no-visa" placeholder="No Visa">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="input-group">
                                                             <label for="masa-berlaku" class="fw-semibold m-2">Masa
                                                                 Berlaku</label>
-                                                            <input type="date" id="masa-berlaku"
-                                                                class="form-control" id="masa-berlaku">
+                                                            <input type="date" name="masa_berlaku_visa"
+                                                                id="masa-berlaku" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -306,7 +322,7 @@
                                                     <div class="input-group-text"><i
                                                             class="bi bi-distribute-vertical"></i>
                                                     </div>
-                                                    <select name="jenis_paket" id="jenis_paket"
+                                                    <select name="jenis_kamar" id="jenis_kamar"
                                                         class="btn btn-secondary dropdown-toggle">
                                                         <option value="" selected disabled>Pilih Kamar</option>
                                                         <option value="Kamar Quint" class="dropdown-item">Kamar Quint
@@ -330,7 +346,6 @@
                                             <button type="submit" class="btn btn-primary ">Tambah
                                                 Jamaah</button>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
